@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Jacquard+24&family=Jacquard+24+Charted&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Jacquard 24", system-ui;
+}
+
+header {
+    background: url('images/falz.jpeg') no-repeat center center/cover;
+    min-height: 100vh;
+    position: relative;
+    z-index: -1;
+}
+
+header::before {
+    position: absolute;
+    content: '';
+    background: rgba(0, 0, 0, 0.7);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.outer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    color: #FFD700;
+    text-align: center;
+    padding: 2rem;
+}
+
+.outer h2 {
+    font-size: 7rem;
+    opacity: 0;
+    transform: translateY(100px);
+    animation: slideInFromBottom 1s ease-in-out forwards;
+}
+
+.outer p {
+    font-size: 2rem;
+    opacity: 0;
+    transform: translateY(100px);
+    animation: slideInFromBottom 1s ease-in-out forwards;
+    animation-delay: 0.5s;
+}
+
+.countdown {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    color: #FFD700;
+    grid-gap: 2rem;
+    margin: 2rem 0;
+    font-size: 1.5rem;
+    opacity: 0;
+    transform: translateY(100px);
+    animation: slideInFromBottom 1s ease-in-out forwards;
+    animation-delay: 1s;
+}
+
+.countdown span {
+    display: block;
+}
+
+.time {
+    padding: 2rem;
+}
+
+.numbers {
+    font-size: 5rem;
+    font-weight: 800;
+}
+
+
+
+@keyframes slideInFromBottom {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .outer h2 {
+        font-size: 3rem;
+    }
+
+    .outer p {
+        font-size: 1rem;
+    }
+    
+    .countdown {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        color: #FFD700;
+        grid-gap: 1rem;
+        margin: 1rem 0;
+    }
+
+    .numbers {
+        font-size: 3.5rem;
+        font-weight: 800;
+    }
+
+}
